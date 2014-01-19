@@ -1,0 +1,62 @@
+CRUD = new function() {
+	console.log("CRUD operations protocol has been initiated ");
+
+	this.delete_entry =function(id){
+		console.log("Deleting !!");
+		$("#"+id).fadeOut("slow");
+		$("#"+(id+1)).fadeOut("slow");
+     		$.get("welcome/", 
+		{ 
+			id: id, 
+			action: "delete" 
+		},
+   		function(data){
+
+  		}
+		);
+
+	}
+
+	this.getValues = function(){
+		console.log("inside the inner function");
+		console.log(document.task.fName.value);
+		console.log(document.task.lName.value);
+		console.log(document.task.conNo.value);
+
+			var id = Math.floor(Math.random()*100000);
+			var d = new Date().toString();
+			var dateStr = d.substring(0, d.indexOf(":",20));
+			
+			
+			var textFName = document.task.fName.value;
+			var textLName = document.task.lName.value;
+			var textConNo = document.task.conNo.value;
+
+
+
+				
+			$.post("welcome/", 
+			{ 
+				first: textFName, 
+				last: textLName, 
+				contact: textConNo, 
+				time: dateStr, 
+				action: "add", 
+				id:id 
+			},
+		   		function(data){
+					$(data).hide().prependTo(".table").fadeIn("slow");
+					console.log("fadein executed");
+					$("#message").hide();
+					$("#fName").val("");
+					$("#lName").val("");
+					$("#conNo").val("");
+		   		}
+
+			);
+
+
+	}
+			
+}
+
