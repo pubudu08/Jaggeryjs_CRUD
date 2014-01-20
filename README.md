@@ -15,7 +15,7 @@ Technologies and Tools used in this article:
 		JDK 1.6
 		Chrome/Firefox
 		Bootstrap for look and feel
-		MySQL database
+		MySQL database and mysql-connector-java
 		
 1. Setting up  
 
@@ -27,4 +27,4 @@ Technologies and Tools used in this article:
 
 	Make sure your MySQL up and running, create a DB called tasks
 
-for further instructions please refer this article - 
+for further instructions please refer this article - http://geekdetected.wordpress.com/2014/01/19/basic-crud-operations-using-jaggery/
